@@ -41,4 +41,4 @@ sudo apt install ./wiringpi-3.0-1.deb
 
 ## Diagrame de séquence
 
-! [alt text] (https://github.com/LeoPinzano/LibTemperature/blob/main/diag_seq_capt_temp.png)
+![alt text](https://github.com/LeoPinzano/LibTemperature/blob/main/diag_seq_capt_temp.png)
