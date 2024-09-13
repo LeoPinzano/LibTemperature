@@ -101,4 +101,4 @@ Le projet contient les fichiers suivants :
 
 ## Diagrame de séquence
 
-![alt text](https://github.com/LeoPinzano/LibTemperature/blob/main/diag_seq_capt_temp.png)
+![alt text](https://drive.google.com/file/d/1GCA8TgrqBAq1sskiX6H1L1OuEINfWh0-/view?usp=drive_link)
