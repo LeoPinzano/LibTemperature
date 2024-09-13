@@ -9,6 +9,7 @@ Le projet repose principalement sur une classe `libTemp` qui encapsule la logiqu
 ## Fonctionnalités
 
 - **Classe `libTemp`** :
+  
   - Représente un capteur de température MCP9808 connecté via I2C.
   - Utilise `wiringPi` pour la communication I2C avec le capteur.
   - Permet la lecture de la température sous forme de flottant (en °C).
@@ -25,7 +26,7 @@ Le projet repose principalement sur une classe `libTemp` qui encapsule la logiqu
 Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 
 - Une Raspberry Pi (ou tout autre système compatible I2C).
-- La bibliothèque [wiringPi](http://wiringpi.com/) pour gérer les communications I2C.
+- La bibliothèque [wiringPi]([http://wiringpi.com/](https://github.com/WiringPi/WiringPi)) pour gérer les communications I2C.
 - [CMake](https://cmake.org/) pour la compilation.
 
 ### Étapes
