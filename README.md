@@ -39,3 +39,4 @@ mv debian-template/wiringpi-3.0-1.deb .
 sudo apt install ./wiringpi-3.0-1.deb
 ```
 
+## Diagrame de séquence
