@@ -26,7 +26,7 @@ Le projet repose principalement sur une classe `libTemp` qui encapsule la logiqu
 Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 
 - Une Raspberry Pi (ou tout autre système compatible I2C).
-- La bibliothèque [wiringPi]([http://wiringpi.com/](https://github.com/WiringPi/WiringPi)) pour gérer les communications I2C.
+- La bibliothèque [wiringPi](https://github.com/WiringPi/WiringPi) pour gérer les communications I2C.
 - [CMake](https://cmake.org/) pour la compilation.
 
 ### Étapes
