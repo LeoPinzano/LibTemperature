@@ -1,7 +1,3 @@
-Voici le `README.md` pour ton projet basé sur l'exemple que tu as fourni :
-
----
-
 # Projet Capteur de Température (MCP9808)
 
 ## Description
@@ -36,8 +32,8 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 
 1. Clonez ce dépôt sur votre machine locale :
     ```bash
-    git clone https://github.com/votre-utilisateur/temperature-sensor-mcp9808.git
-    cd temperature-sensor-mcp9808
+    git clone https://github.com/votre-utilisateur/LibTemperature.git
+    cd LibTemperature
     ```
 
 2. Créez un répertoire de build et compilez le projet avec CMake :
@@ -72,6 +68,7 @@ Le projet contient les fichiers suivants :
 - **`libTemp.h`** : Déclaration de la classe `libTemp`.
 - **`libTemp.cpp`** : Implémentation de la classe `libTemp`.
 - **`main.cpp`** : Programme principal qui utilise la classe pour lire la température du capteur et l'afficher.
+- **`CMakeLists.txt`** : Fichier CMake pour compiler le projet.
 
 ## Contributeurs
 
