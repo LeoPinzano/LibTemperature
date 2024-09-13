@@ -101,4 +101,5 @@ Le projet contient les fichiers suivants :
 
 ## Diagrame de séquence
 
-![alt text](https://drive.google.com/uc?export=view&id=1GCA8TgrqBAq1sskiX6H1L1OuEINfWh0)
+![diag_seq_capt_temp](https://github.com/user-attachments/assets/b5e01db1-c2e3-4408-ac18-049ea37bd5bd)
+
