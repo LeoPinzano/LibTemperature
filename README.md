@@ -38,3 +38,5 @@ mv debian-template/wiringpi-3.0-1.deb .
 # install i
 sudo apt install ./wiringpi-3.0-1.deb
 
+![diag_seq_capt_temp](https://github.com/user-attachments/assets/b75d3737-031c-4be5-ad7e-2df4d5e3b723)
+![diag_seq_capt_temp](https://github.com/user-attachments/assets/b75d3737-031c-4be5-ad7e-2df4d5e3b723)
