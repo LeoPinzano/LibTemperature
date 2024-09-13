@@ -31,6 +31,29 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 
 ### Étapes
 
+#### Installation de wiringPi
+
+``` bash
+# fetch the source
+sudo apt install git
+git clone https://github.com/WiringPi/WiringPi.git
+cd WiringPi
+
+# build the package
+./build debian
+mv debian-template/wiringpi-3.0-1.deb .
+
+# install it
+sudo apt install ./wiringpi-3.0-1.deb
+```
+#### Installation de CMake
+
+``` bash
+sudo apt install cmake
+```
+
+#### Installation du projet
+
 1. Clonez ce dépôt sur votre machine locale :
     ```bash
     git clone https://github.com/votre-utilisateur/LibTemperature.git
