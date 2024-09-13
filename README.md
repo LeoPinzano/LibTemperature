@@ -35,8 +35,10 @@ cd WiringPi
 ./build debian
 mv debian-template/wiringpi-3.0-1.deb .
 
-# install i
+# install
 sudo apt install ./wiringpi-3.0-1.deb
 ```
 
 ## Diagrame de séquence
+
+! [alt text] (https://github.com/LeoPinzano/LibTemperature/blob/main/diag_seq_capt_temp.png)
