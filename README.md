@@ -15,11 +15,6 @@ Le projet contient les fichiers suivants :
 - **`main.cpp`** : Programme principal qui utilise la classe pour lire la température du capteur et l'afficher.
 - **`CMakeLists.txt`** : Fichier CMake pour compiler le projet.
 
-## Contributeurs
-
-- **Léo** : Développeur principal de la classe `libTemp` et intégration avec la bibliothèque `wiringPi`.
-- **Pier-André** : Concepteur du diagramme de séquence et configuration de la carte Raspberry.
-
 ## Diagrame de séquence
 
 ![diag_seq_capt_temp](https://github.com/user-attachments/assets/b5e01db1-c2e3-4408-ac18-049ea37bd5bd)
@@ -114,3 +109,8 @@ Si le capteur est mal connecté ou s'il y a une erreur de communication, le prog
 
 - **Erreur de compilation** :
   - Assurez-vous que `wiringPi` et `CMake` sont correctement installés.
+
+## Contributeurs
+
+- **Léo** : Développeur principal de la classe `libTemp` et intégration avec la bibliothèque `wiringPi`.
+- **Pier-André** : Concepteur du diagramme de séquence et configuration de la carte Raspberry.
