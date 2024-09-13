@@ -2,18 +2,37 @@
 
 ## Description
 
-Ce projet en C++ permet de lire les données de température à partir d'un capteur MCP9808 via une connexion I2C. Il utilise la bibliothèque `wiringPi` pour gérer les communications I2C sur une Raspberry Pi. Le capteur est interrogé en continu et la température est affichée en degrés Celsius dans le terminal.
+Ce projet permet de lire la température en temps réel depuis un capteur **MCP9808** connecté à une **Raspberry Pi** via une interface **I2C**. Il utilise la bibliothèque `wiringPi` pour gérer la communication avec le capteur et affiche les valeurs en degrés Celsius.
 
 Le projet repose principalement sur une classe `libTemp` qui encapsule la logique de lecture du capteur.
+
+## Structure du projet
+
+Le projet contient les fichiers suivants :
+
+- **`libTemp.h`** : Déclaration de la classe `libTemp`.
+- **`libTemp.cpp`** : Implémentation de la classe `libTemp`.
+- **`main.cpp`** : Programme principal qui utilise la classe pour lire la température du capteur et l'afficher.
+- **`CMakeLists.txt`** : Fichier CMake pour compiler le projet.
+
+## Contributeurs
+
+- **Léo** : Développeur principal de la classe `libTemp` et intégration avec la bibliothèque `wiringPi`.
+- **Pier-André** : Concepteur du diagramme de séquence et configuration de la carte Raspberry.
+
+## Diagrame de séquence
+
+![diag_seq_capt_temp](https://github.com/user-attachments/assets/b5e01db1-c2e3-4408-ac18-049ea37bd5bd)
+
 
 ## Fonctionnalités
 
 - **Classe `libTemp`** :
   
-  - Représente un capteur de température MCP9808 connecté via I2C.
-  - Utilise `wiringPi` pour la communication I2C avec le capteur.
-  - Permet la lecture de la température sous forme de flottant (en °C).
-  - Gère les erreurs de communication et vérifie la connexion au capteur lors de l'initialisation.
+- Lecture continue de la température via le capteur MCP9808.
+- Gestion des erreurs de communication I2C.
+- Affichage des valeurs de température en temps réel dans le terminal.
+- Prise en charge des températures négatives.
 
 ### Détails de la classe :
   - Constructeur pour initialiser le capteur avec son adresse I2C (par défaut : `0x18`).
@@ -23,15 +42,16 @@ Le projet repose principalement sur une classe `libTemp` qui encapsule la logiqu
 
 ### Prérequis
 
-Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
+- Une Raspberry Pi ou autre système compatible I2C.
+- Le capteur MCP9808 connecté aux broches I2C de la Raspberry Pi.
+- Les bibliothèques suivantes doivent être installées :
 
-- Une Raspberry Pi (ou tout autre système compatible I2C).
-- La bibliothèque [wiringPi](https://github.com/WiringPi/WiringPi) pour gérer les communications I2C.
-- [CMake](https://cmake.org/) pour la compilation.
+  - **[wiringPi](https://github.com/WiringPi/WiringPi)** : Gestion des communications I2C sur Raspberry Pi.
+  - **[CMake](https://cmake.org/)** : Outil de compilation pour construire le projet.
 
 ### Étapes
 
-#### Installation de wiringPi
+#### Installation de `wiringPi`
 
 ``` bash
 # fetch the source
@@ -46,13 +66,13 @@ mv debian-template/wiringpi-3.0-1.deb .
 # install it
 sudo apt install ./wiringpi-3.0-1.deb
 ```
-#### Installation de CMake
+#### Installation de `CMake`
 
 ``` bash
 sudo apt install cmake
 ```
 
-#### Installation du projet
+#### Cloner et compiler le projet
 
 1. Clonez ce dépôt sur votre machine locale :
     ```bash
@@ -83,23 +103,14 @@ Température : 23.6°C
 Température : 23.7°C
 ```
 
-Si le capteur n'est pas détecté ou si une erreur de communication survient, un message d'erreur sera affiché dans la console.
+Si le capteur est mal connecté ou s'il y a une erreur de communication, le programme affichera un message d'erreur dans le terminal. Assurez-vous que le capteur est bien branché sur les broches I2C de la Raspberry Pi et que l'adresse I2C utilisée est correcte.
 
-## Structure du projet
+## Dépannage
 
-Le projet contient les fichiers suivants :
+- **Erreur : "Aucun capteur détecté"** :
+  - Vérifiez que le capteur est correctement connecté aux broches I2C (SDA, SCL) de la Raspberry Pi.
+  - Assurez-vous que l'adresse I2C du capteur est correcte. L'adresse par défaut est `0x18`, mais elle peut être modifiée.
+  - Utilisez la commande `i2cdetect -y 1` pour vérifier si le capteur est détecté sur le bus I2C.
 
-- **`libTemp.h`** : Déclaration de la classe `libTemp`.
-- **`libTemp.cpp`** : Implémentation de la classe `libTemp`.
-- **`main.cpp`** : Programme principal qui utilise la classe pour lire la température du capteur et l'afficher.
-- **`CMakeLists.txt`** : Fichier CMake pour compiler le projet.
-
-## Contributeurs
-
-- **Léo** : Développeur principal de la classe `libTemp` et intégration avec la bibliothèque `wiringPi`.
-- **Pier-André** : Concepteur du diagramme de séquence et configuration de la carte Raspberry.
-
-## Diagrame de séquence
-
-![diag_seq_capt_temp](https://github.com/user-attachments/assets/b5e01db1-c2e3-4408-ac18-049ea37bd5bd)
-
+- **Erreur de compilation** :
+  - Assurez-vous que `wiringPi` et `CMake` sont correctement installés.
