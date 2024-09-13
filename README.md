@@ -1,43 +1,82 @@
-# LibTemperature (MCP9808)
+Voici le `README.md` pour ton projet basé sur l'exemple que tu as fourni :
 
-Ce projet utilise un capteur de température MCP9808 avec une connexion I2C, piloté par une Raspberry Pi et la bibliothèque `wiringPi` afin de lire les données de température et les affiche dans le terminal.
+---
 
-## Contenu du projet
+# Projet Capteur de Température (MCP9808)
 
-- `main.cpp` : Le fichier principal qui lance la boucle pour lire les données de température à partir du capteur.
-- `libTemp.h` : Le fichier header qui contient la déclaration de la classe `TemperatureSensor`.
-- `libTemp.cpp` : Le fichier d'implémentation pour la classe `TemperatureSensor`.
-- `CMakeLists.txt` : Le fichier de configuration pour la compilation avec CMake.
+## Description
 
-## Prérequis
+Ce projet en C++ permet de lire les données de température à partir d'un capteur MCP9808 via une connexion I2C. Il utilise la bibliothèque `wiringPi` pour gérer les communications I2C sur une Raspberry Pi. Le capteur est interrogé en continu et la température est affichée en degrés Celsius dans le terminal.
 
-### Matériel
+Le projet repose principalement sur une classe `libTemp` qui encapsule la logique de lecture du capteur.
 
-- Une Raspberry Pi (ou tout autre système compatible avec I2C et `wiringPi`).
-- Un capteur température MCP9808
+## Fonctionnalités
 
-### Logiciel
+- **Classe `libTemp`** :
+  - Représente un capteur de température MCP9808 connecté via I2C.
+  - Utilise `wiringPi` pour la communication I2C avec le capteur.
+  - Permet la lecture de la température sous forme de flottant (en °C).
+  - Gère les erreurs de communication et vérifie la connexion au capteur lors de l'initialisation.
 
-- [CMake](https://cmake.org/install/) version 3.10 ou supérieure.
-- [wiringPi](http://wiringpi.com/) installé sur votre Raspberry Pi pour la communication I2C.
+### Détails de la classe :
+  - Constructeur pour initialiser le capteur avec son adresse I2C (par défaut : `0x18`).
+  - Méthode `readTemperature()` pour récupérer la température en degrés Celsius, en tenant compte des valeurs négatives.
+  
+## Installation et Compilation
 
-#### Installation de `wiringPi`
+### Prérequis
 
-Si `wiringPi` n'est pas déjà installé, vous pouvez l'installer avec les commandes suivantes :
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 
-```bash
-# fetch the source
-sudo apt install git
-git clone https://github.com/WiringPi/WiringPi.git
-cd WiringPi
+- Une Raspberry Pi (ou tout autre système compatible I2C).
+- La bibliothèque [wiringPi](http://wiringpi.com/) pour gérer les communications I2C.
+- [CMake](https://cmake.org/) pour la compilation.
 
-# build the package
-./build debian
-mv debian-template/wiringpi-3.0-1.deb .
+### Étapes
 
-# install
-sudo apt install ./wiringpi-3.0-1.deb
+1. Clonez ce dépôt sur votre machine locale :
+    ```bash
+    git clone https://github.com/votre-utilisateur/temperature-sensor-mcp9808.git
+    cd temperature-sensor-mcp9808
+    ```
+
+2. Créez un répertoire de build et compilez le projet avec CMake :
+    ```bash
+    mkdir build
+    cd build
+    cmake ..
+    make
+    ```
+
+3. Exécutez le programme compilé :
+    ```bash
+    ./libTemp
+    ```
+
+## Utilisation
+
+Le programme interroge en continu le capteur MCP9808 toutes les secondes et affiche la température dans le terminal. Voici un exemple de sortie :
+
 ```
+Température : 23.5°C
+Température : 23.6°C
+Température : 23.7°C
+```
+
+Si le capteur n'est pas détecté ou si une erreur de communication survient, un message d'erreur sera affiché dans la console.
+
+## Structure du projet
+
+Le projet contient les fichiers suivants :
+
+- **`libTemp.h`** : Déclaration de la classe `libTemp`.
+- **`libTemp.cpp`** : Implémentation de la classe `libTemp`.
+- **`main.cpp`** : Programme principal qui utilise la classe pour lire la température du capteur et l'afficher.
+
+## Contributeurs
+
+- **Léo** : Développeur principal de la classe `libTemp` et intégration avec la bibliothèque `wiringPi`.
+- **Pier-André** : Concepteur du diagramme de séquence et configuration de la carte Raspberry.
 
 ## Diagrame de séquence
 
