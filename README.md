@@ -112,5 +112,5 @@ Si le capteur est mal connecté ou s'il y a une erreur de communication, le prog
 
 ## Contributeurs
 
-- **Léo** : Développeur principal de la classe `libTemp` et intégration avec la bibliothèque `wiringPi`.
+- **Léo** : Développeur de la classe `libTemp` et intégration avec la bibliothèque `wiringPi`.
 - **Pier-André** : Concepteur du diagramme de séquence et configuration de la carte Raspberry.
